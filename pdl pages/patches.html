@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lily DeHaven">
+    <link rel="icon" href="../assets/logo.jpg">
+    <title>Patches</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <style>
+        main{
+            display: flex;
+            margin: 3em 2em;
+        }
+        .info-left{
+            width: 20%;
+            border-right: 2px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+        main div:nth-child(even){
+            width: 70%;
+            margin: 0 1em;
+        }
+
+        @media (max-width: 600px){
+            .info-left{
+                margin: 2em;
+            }
+        }
+
+        @media (max-width: 600px){
+            main{
+                display: block;
+            }
+            .info-left{
+                width: 100%;
+            }
+            main div:nth-child(even){
+                width: 100%;
+            }
+        }
+    </style>
+    <header>
+        <img src="../assets/logo.jpg" alt="a swirly triangle">
+        <h1>Caine, Farber & Gordon, Inc.</h1>
+        <h2>PDL/81</h2>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../pdl.html" class="active">PDL/81</a>
+        <a href="../compilers.html">Compilers</a>
+    </nav>
+    <main>
+        <div class="info-left">
+            <h2>Information About PDL/81</h2>
+            <ul>
+                <li><a href="../pdl.html">PDL/81 Home Page</a></li>
+                <li><a href="description.html">Description of PDL/81</a></li>
+                <li><a href="platforms.html">Platforms</a></li>
+                <li><a href="attributes.html">PDL/81 Attributes</a></li>
+                <li><a href="introduction.html">An Introduction to PDL/81</a></li>
+                <li><a href="patches.html">Patches you may download</a></li>
+                <li><a href="documentation.html">PDL/81 Documemtation</a> - the eight primary PDL/81 manuals in Adobe PDF format</li>
+                <li><a href="patches.html#2000">Information on PDL/81 and the Year 2000 Problem</a></li>
+                <li><a href="https://www.cfg.com/pdl81/docs/pdl74_manual.pdf" target="_blank"">Manual for the original PDL Processor, PDL/74</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>
+                <img src="../assets/pdl1a.jpg" alt="dark blue background with white pdl81 text">
+                <h1>Patches to PDL/81</h1>
+                <p>
+                    From time-to-time, we may release patches to the PDL/81 processor in order to fix bugs or add features. 
+                    <strong>Before applying any of these patches, be sure that you are fully backed up so that you may easily revert 
+                    to the previous version of PDL/81 if you do not like the results!</strong> The patches below assume the use of Larry 
+                    Wall's patch utility. Most, however, are simple enough that they may be applied by hand with a reasonable 
+                    chance of success. The patches will normally be in the form of UNIX tar files that have been compressed with 
+                    the GNU gzip utility.
+                </p>
+            </div>
+            <div>
+                <h2>Patches to PDL/81 Version 2.0.908 -- 917</h2>
+                <p>The patches in this group are all to the base 2.0.908 release and to subsequent releases through Build 917. Unless otherwise stated, the patches are independent of each other.</p>
+                <h3 id="2000">Year 2000 Updates</h3>
+                <p>Year 2000 is not a catastrophic problem for PDL/81 as the only use of dates is in printing. However, dates such as January 1, 2000 will print in PDL/81 output as 1 Jan 100 instead of 1 Jan 2000.</p>
+                <p>This patch updates the ada, design, document language, and 2167 styles so that the year is printed as four digits.</p>
+                <p>We believe that this patch corrects the only Year 2000 problem. However, we cannot guarantee this and it is certainly possible that we have overlooked something.</p>
+                <p>You may:</p>
+                <ul>
+                    <li><a href="../assets/patches/pdl README.txt" target="_blank" download>Download the README file;</a></li>
+                    <li><a href="../assets/patches/patch.txt" target="_blank" download>download the patch as a txt file, or</a></li>
+                    <li><a href="../assets/patches/patch-19970505.tar.gz" target="_blank" download>download the patch and README file as a gzipped tar file (~2KB)</a></li>
+                </ul>
+                <h3>Other Bugs</h3>
+                <p>This section provides various bug fixes.</p>
+                <h4>Problem With Data Item Names</h4>
+                <p>
+                    We have recently found that under Digital UNIX on the Alpha/AXP, PDL/81 incorrectly handles data item names. 
+                    In particular, special characters such as parens and commas are treated as part of the name. It is possible 
+                    that this may occur on other UNIX variants even though we have not encountered it. You may 
+                    <a href="../assets/patches/bugs README.txt" target="_blank">see the README file</a> or you may 
+                    <a href="../assets/patches/patch-19980303.tar.gz" target="_blank" download>download the patch (~1KB).</a>
+                </p>
+                <h3>Additional Features</h3>
+                <p>This section provides patches that add features to PDL/81.</p>
+                <h4>Suppress Automatic Formatting in a Flow Segment</h4>
+                <p>
+                    This patch adds the <small>%AsIs</small> and <small> %NoAsIs</small> commands. When used in a flow segment, the first of these turns off formatting, data definition, and data referencing. The second turns them back on. The commands are useful for delimiting areas of block comments.
+                </p>
+                <p>
+                    You may <a href="../assets/patches/features README.txt" target="_blank">see the README file</a> or you may
+                    <a href="../assets/patches/patch-960514.tar.gz" target="_blank" download>download the patch</a> (~2KB).
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../contact.html">Contact Us</a>
+            <a href="../pdl.html">PDL/81</a>
+            <a href="../compilers.html">Compilers</a>
+        </div>
+        <p>DISCLAIMER: All words and text belong to Caine, Farber & Gordon, Inc. This website is simply a redesign and is based off of <a href="https://www.cfg.com/" target="_blank">cfg.com</a>.</p>
+        <p><small>All designs are original work of Lily DeHaven &copy; 2023</small></p>
+    </footer>
+</body>
+</html>

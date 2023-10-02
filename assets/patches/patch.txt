@@ -1,0 +1,291 @@
+*** ada	1994/06/02 15:48:07	2.15
+--- ada	1997/05/05 21:11:16
+***************
+*** 20,26 ****
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/ada,v 2.15 1994/06/02 15:48:07 shc Exp $ ***
+  
+  %***********************************************
+  %********** CONFIGURATION DEFINITIONS **********
+--- 20,26 ----
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/ada,v 2.16 1997/05/05 21:10:32 shc Exp $ ***
+  
+  %***********************************************
+  %********** CONFIGURATION DEFINITIONS **********
+***************
+*** 40,46 ****
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.15 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+--- 40,46 ----
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.16 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+***************
+*** 435,441 ****
+  
+  %***** %DATE *****
+  
+! #{ds;1date;{#{ds;date;#{substr;1;9;#1}}}}
+  
+  %***** %DCHAR *****
+  
+--- 435,441 ----
+  
+  %***** %DATE *****
+  
+! #{ds;1date;{#{ds;date;#1}}}
+  
+  %***** %DCHAR *****
+  
+***************
+*** 2200,2206 ****
+--- 2200,2214 ----
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
++ %*** Note: The first two lines of the body oif $start force us to use
++ %***       the full year.  The apparently useless assignment of .year
++ %***       to itself is needed because .year may be set by -r on the
++ %***       command line and, if so, the first assignment in the program
++ %***       will be ignored.
++ 
+  #{ds;$start;{\
++ 	#{nr;.year;.year}\
++ 	#{nr;.year;.year+1900}\
+  	#{if;!restart&#{ifdef;save;1;0};{\
+  		#{nr;restart;1}\
+  		#{ps;Saving dictionary in #{save}...}\
+*** design	1992/05/28 16:31:37	2.3
+--- design	1997/05/05 21:11:17
+***************
+*** 20,26 ****
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/design,v 2.3 1992/05/28 16:31:37 dwb Exp $ ***
+  
+  
+  %***********************************************
+--- 20,26 ----
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/design,v 2.4 1997/05/05 21:10:32 shc Exp $ ***
+  
+  
+  %***********************************************
+***************
+*** 42,48 ****
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.3 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+--- 42,48 ----
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.4 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+***************
+*** 391,397 ****
+  
+  %***** %DATE *****
+  
+! #{ds;1date;{#{ds;date;#{substr;1;9;#1}}}}
+  
+  %***** %DCHAR *****
+  
+--- 391,397 ----
+  
+  %***** %DATE *****
+  
+! #{ds;1date;{#{ds;date;#1}}}
+  
+  %***** %DCHAR *****
+  
+***************
+*** 1863,1873 ****
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
+  #{ds;$start;{\
+  	#{if;!restart&#{ifdef;save;1;0};{\
+  		#{nr;restart;1}\
+  		#{ps;Saving dictionary in #{save}...}\
+! 		#{ds;svdt;#{nc2;.year}#{nc2;.month}#{nc2;.mday}-\
+  			#{nc2;.hour}#{nc2;.min}}\
+  		#{ds;$nodev;#{device}}\
+  		#{dump;#{save}}\
+--- 1863,1881 ----
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
++ %*** Note: The first two lines of the body oif $start force us to use
++ %***       the full year.  The apparently useless assignment of .year
++ %***       to itself is needed because .year may be set by -r on the
++ %***       command line and, if so, the first assignment in the program
++ %***       will be ignored.
++ 
+  #{ds;$start;{\
++ 	#{nr;.year;.year}\
++ 	#{nr;.year;.year+1900}\
+  	#{if;!restart&#{ifdef;save;1;0};{\
+  		#{nr;restart;1}\
+  		#{ps;Saving dictionary in #{save}...}\
+! 		#{ds;svdt;#{nc2;.month}#{nc2;.mday}-\
+  			#{nc2;.hour}#{nc2;.min}}\
+  		#{ds;$nodev;#{device}}\
+  		#{dump;#{save}}\
+*** tb2167.lib	1992/05/28 16:27:17	2.2
+--- tb2167.lib	1997/05/05 21:11:18
+***************
+*** 18,24 ****
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/tb2167.lib,v 2.2 1992/05/28 16:27:17 dwb Exp $ ***
+  
+  
+  %******************************************************************************
+--- 18,24 ----
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/tb2167.lib,v 2.3 1997/05/05 21:10:32 shc Exp $ ***
+  
+  
+  %******************************************************************************
+***************
+*** 41,47 ****
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.2 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+--- 41,47 ----
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.3 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+***************
+*** 862,871 ****
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
+  #{ds;setdate;{\
+  	#{ds;mname;#{case;.month;;January;February;March;April;May;June;\
+  		July;August;September;October;November;December}}\
+! 	#{ds;date;#{.mday} #{mname} 19#{.year}}\
+  	#{ds;mname3;#{substr;1;3;#{mname}}}\
+  	#{ds;date3;#{.mday} #{mname3} #{.year}}\
+  }}
+--- 862,879 ----
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
++ %*** Note: The first two lines of the body oif $setdate force us to use
++ %***       the full year.  The apparently useless assignment of .year
++ %***       to itself is needed because .year may be set by -r on the
++ %***       command line and, if so, the first assignment in the program
++ %***       will be ignored.
++ 
+  #{ds;setdate;{\
++ 	#{nr;.year;.year}\
++ 	#{if;.year < 1900;{#{nr;.year;.year+1900}}}\
+  	#{ds;mname;#{case;.month;;January;February;March;April;May;June;\
+  		July;August;September;October;November;December}}\
+! 	#{ds;date;#{.mday} #{mname} #{.year}}\
+  	#{ds;mname3;#{substr;1;3;#{mname}}}\
+  	#{ds;date3;#{.mday} #{mname3} #{.year}}\
+  }}
+*** tbase.lib	1992/05/28 16:27:25	2.4
+--- tbase.lib	1997/05/05 21:11:19
+***************
+*** 18,24 ****
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/tbase.lib,v 2.4 1992/05/28 16:27:25 dwb Exp $ ***
+  
+  
+  %******************************************************************************
+--- 18,24 ----
+  %************************************************************************
+  %************************************************************************
+  
+! %*** @(#) $Header: /usr/local/src/pdl81/pdl8120-master/pdl81.dir/source.d/lib/RCS/tbase.lib,v 2.5 1997/05/05 21:10:32 shc Exp $ ***
+  
+  
+  %******************************************************************************
+***************
+*** 41,47 ****
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.4 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+--- 41,47 ----
+  
+  %********** Optionally Display File Name and Revision **********
+  
+! #{ds;rcsrev;$Revision: 2.5 $}
+  #{ds;revision;#{substr;12;#{length;#{rcsrev}}-13;#{rcsrev}}}
+  #{if;ShowLibRev;{#{ps;<#{$file}: #{revision}>}}}
+  
+***************
+*** 791,800 ****
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
+  #{ds;setdate;{\
+  	#{ds;mname;#{case;.month;;January;February;March;April;May;June;\
+  		July;August;September;October;November;December}}\
+! 	#{ds;date;#{.mday} #{mname} 19#{.year}}\
+  	#{ds;mname3;#{substr;1;3;#{mname}}}\
+  	#{ds;date3;#{.mday} #{mname3} #{.year}}\
+  }}
+--- 791,808 ----
+  
+  #{ds;nc2;{#{if;#1<10;0}#{ev;#1}}}
+  
++ %*** Note: The first two lines of the body oif $setdate force us to use
++ %***       the full year.  The apparently useless assignment of .year
++ %***       to itself is needed because .year may be set by -r on the
++ %***       command line and, if so, the first assignment in the program
++ %***       will be ignored.
++ 
+  #{ds;setdate;{\
++ 	#{nr;.year;.year}\
++ 	#{if;.year < 1900;{#{nr;.year;.year+1900}}}\
+  	#{ds;mname;#{case;.month;;January;February;March;April;May;June;\
+  		July;August;September;October;November;December}}\
+! 	#{ds;date;#{.mday} #{mname} #{.year}}\
+  	#{ds;mname3;#{substr;1;3;#{mname}}}\
+  	#{ds;date3;#{.mday} #{mname3} #{.year}}\
+  }}

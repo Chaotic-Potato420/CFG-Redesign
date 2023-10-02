@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lily DeHaven">
+    <link rel="icon" href="../assets/logo.jpg">
+    <title>Description</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <style>
+        main{
+            display: flex;
+            margin: 3em 2em;
+        }
+        .info-left{
+            width: 20%;
+            border-right: 2px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+        main div:nth-child(even), dl{
+            width: 70%;
+            margin: 0 1em;
+        }
+
+        @media (max-width: 600px){
+            .info-left{
+                margin: 2em;
+            }
+        }
+
+        @media (max-width: 600px){
+            main{
+                display: block;
+            }
+            .info-left{
+                width: 100%;
+            }
+            main div:nth-child(even){
+                width: 100%;
+            }
+        }
+    </style>
+    <header>
+        <img src="../assets/logo.jpg" alt="a swirly triangle">
+        <h1>Caine, Farber & Gordon, Inc.</h1>
+        <h2>PDL/81</h2>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../pdl.html" class="active">PDL/81</a>
+        <a href="../compilers.html">Compilers</a>
+    </nav>
+    <main>
+        <div class="info-left">
+            <h2>Information About PDL/81</h2>
+            <ul>
+                <li><a href="../pdl.html">PDL/81 Home Page</a></li>
+                <li><a href="description.html">Description of PDL/81</a></li>
+                <li><a href="platforms.html">Platforms</a></li>
+                <li><a href="attributes.html">PDL/81 Attributes</a></li>
+                <li><a href="introduction.html">An Introduction to PDL/81</a></li>
+                <li><a href="patches.html">Patches you may download</a></li>
+                <li><a href="documentation.html">PDL/81 Documemtation</a> - the eight primary PDL/81 manuals in Adobe PDF format</li>
+                <li><a href="patches.html#2000">Information on PDL/81 and the Year 2000 Problem</a></li>
+                <li><a href="https://www.cfg.com/pdl81/docs/pdl74_manual.pdf" target="_blank">Manual for the original PDL Processor, PDL/74</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>
+                <img src="../assets/pdl1a.jpg" alt="dark blue background with white pdl81 text">
+                <h1>PDL/81 LPD</h1>
+                <p>
+                    PDL/81 operates on Digital Equipment Corporation VAX computers under the VMS and Ultrix operating systems, 
+                    Alpha AXP Computers under the OpenVMS and OSF/1 operating systems, many computers under the UNIX operating 
+                    system and its variants, and IBM PC computers (and true compatibles) under the MS-DOS operating system.
+                </p>
+            </div>
+            <div>
+                <h2>Purpose</h2>
+                <p>
+                    PDL/81 is a proven tool for the systematic and reliable design and documentation of software. It provides 
+                    (1) a simple language for expressing designs clearly and unambiguously, and (2) a processor for generating 
+                    high-quality design documents. It is well suited to both high level and detailed designs of software to be 
+                    implemented in any programming language.
+                </p>
+                <p>Benefits from using PDL/81 include:</p>
+                <ul>
+                    <li>software productivity is increased and the resulting programs are better organized and more reliable;</li>
+                    <li>management risk is reduced since designs can be tested against requirements early in the development cycle;</li>
+                    <li>software visibility is higher so that progress estimates can be more accurately obtained;</li>
+                    <li>documentation in the form of a PDL/81 design document is obtained before code is written;</li>
+                    <li>a common, unambiguous medium for communication of a software design can be used by all the personnel concerned in a project;</li>
+                    <li>design complexity metrics can be automatically computed and displayed; and</li>
+                    <li>project requirements can be automatically tracked and cross-referenced.</li>
+                </ul>
+                <p>
+                    PDL/81 processing and layout specifications are controlled by a special language known as the Format Design Language. The collection of statements in this language which define the format for a particular kind of document are known as a document style. The available document styles are stored in the PDL/81 style library.
+                </p>
+            </div>
+            <div>
+                <h2>The PDL/81 Design Style</h2>
+                <p>
+                    The design style of PDL/81 is intended for processing design documents and accepts as input a series of source lines in a language which may be termed structured English. The output document can be formatted for printing on a number of different devices using various paper dimensions. The main components of the resulting document are:
+                </p>
+                <ul>
+                    <li>Cover page: Identifies the document.</li>
+                    <li>Table of Contents: Automatically generated from the input.</li>
+                    <li>Design Body: Contains the actual design information.</li>
+                    <li>Segment Reference Trees: Illustrates, by indented listings, the relationships among the procedural portions of the design.</li>
+                    <li>Data Index: Lists the data items declared in the design and shows where each is used.</li>
+                    <li>Flow Segment Index: Lists the "procedures" of the design and shows where each is used.</li>
+                </ul>
+                <p>The design body is composed of a number of segments. There are four different segment types:</p>
+                <ul>
+                    <li>Text Segments: These contain general descriptive text.</li>
+                    <li>Data Segments: These declare the names of data items which are to be collected in the Data Index.</li>
+                    <li>
+                        Flow Segments: Each of these represents a procedure of the design. Flow segments are automatically formatted based on the use of keywords. The standard keywords are:
+                        <ul>
+                            <li>IF</li>
+                            <li>DO</li>
+                            <li>RETURN</li>
+                            <li>ELSE IF</li>
+                            <li>UNDO</li>
+                            <li>ELSE</li>
+                            <li>CYCLE</li>
+                            <li>END IF</li>
+                            <li>END DO</li>
+                        </ul>
+                        Additional keywords may be added easily. Keywords are highlighted in the design document if the printer is capable of processing the selected highlighting mode. References to other flow segments are automatically detected and indicated.
+                    </li>
+                    <li>External Segments: These are used to define procedures which are considered to be defined elsewhere than in the design document.</li>
+                </ul>
+                <p>New features with this release of PDL/81 include:</p>
+                <ul>
+                    <li>Complexity Measurement — the cyclomatic complexity of flow segments may be measured and reported;</li>
+                    <li>Requirements Tracking — references to project requirements may be attached to segments and reported;</li>
+                    <li>Consistency Checking — a Calls-in-Context report may be generated which groups all references to a particular segment and flags those which appear to be inconsistent; and</li>
+                    <li>Combined Code and Design — both code and design may be contained in the same file and either may be selected for processing as desired.</li>
+                </ul>
+            </div>
+            <div>
+                <h2>PDL/81 Ada Design Style</h2>
+                <p>The ada design style is intended for use when the design or implementation requirements call for the Ada programming language. It has been found to satisfy the needs of a design language based on Ada while maintaining the readability of a PDL/81 design.</p>
+                <p>The ada style differs from the design style in several important ways:</p>
+                <ul>
+                    <li>Ada keywords are used and Ada statements are supported.</li>
+                    <li>Ada statements are automatically completed, where necessary.</li>
+                    <li>Constructs for Ada tasking and exceptions are added to the usual constructs for structured programs.</li>
+                    <li>The PDL/81 flow segment is replaced by separate segments for procedures, functions, and task bodies.</li>
+                </ul>
+                <p>A new type of segment, the specification segment, is added to support the separate specification and definition concepts of the Ada language. Specifications of</p>
+                <ul>
+                    <li>Procedures</li>
+                    <li>Functions</li>
+                    <li>Tasks</li>
+                    <li>Task Entries</li>
+                    <li>Records</li>
+                    <li>General Data</li>
+                </ul>
+                <p>may be supplied in one or more specification segments.</p>
+                <p>Complexity measurement, requirements tracking, consistency checking, and combined code and design are supported as in the design style.</p>
+            </div>
+            <div>
+                <h2>PDL/81 Document Language Styles</h2>
+                <p>Several document styles are distributed with PDL/81 to aid in the preparation of various kinds of documentation other than program designs. These are:</p>
+                <dd>
+                    <dt><em>manual</em></dt>
+                    <dd>a style for formatting manuals and reports</dd>
+
+                    <dt><em>man2167</em></dt>
+                    <dd>a style for formatting manuals in the manner required by DoD Standard 2167</dd>
+
+                    <dt><em>letter</em></dt>
+                    <dd>a style for formatting a letter</dd>
+
+                    <dt><em>memo</em></dt>
+                    <dd>a style for formatting a memorandum</dd>
+
+                    <dt><em>text</em></dt>
+                    <dd>a style for formatting general text</dd>
+                </dd>
+                <h3>Automatic Portion Marking of Classified Information</h3>
+                <p>
+                    The document styles distributed with PDL/81 are those which we have been found to be generally useful. In particular, the Document Language styles are designed to meet our layout and publication standards. Thus, it should be expected that modifications will be needed to at least some of the styles before they can be used in production at other sites.
+                </p>
+                <p>
+                    Simple modifications can generally be made after an examination of the related style files and after reading the PDL/81 Installation Guide. Extensive modifications, and the development of entirely new styles, will require reference to the PDL/81 Format Designers' Guide and the aid of someone who is familiar with macro and text processors.
+                </p>
+            </div>
+            <div>
+                <h2>Restricted Rights Legend</h2>
+                <p>
+                    In the absence of an agreement, use, duplication, or disclosure of this software by the U.S. Government is subject to restrictions as set forth in subparagraph (c)(1) of the Commercial Computer Software–Restricted Rights clause at FAR 52.227-19 or in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause at DFARS 252.227-70134, as applicable. Contractor/Manufacturer is Caine, Farber & Gordon, Inc.; 1010 East Union Street; Pasadena, CA 91106; (800) 424-3070 / (818) 449-3070.
+                </p>
+            </div>
+            <div>
+                <h2>Trademark Attributions</h2>
+                <p>
+                    PDL/81, PDL/74, and the PDL prefix are trademarks of Caine, Farber & Gordon, Inc. IBM is a trademark of the International Business Machine Corporation. VAX, AXP, Ultrix, VMS and OpenVMS are trademarks of Digital Equipment Corporation. UNIX is a registered trademark of UNIX System Laboratories. Ada is a registered trademark of the U.S. Government (Ada Joint Program Office).
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../contact.html">Contact Us</a>
+            <a href="../pdl.html">PDL/81</a>
+            <a href="../compilers.html">Compilers</a>
+        </div>
+        <p>DISCLAIMER: All words and text belong to Caine, Farber & Gordon, Inc. This website is simply a redesign and is based off of <a href="https://www.cfg.com/" target="_blank">cfg.com</a>.</p>
+        <p><small>All designs are original work of Lily DeHaven &copy; 2023</small></p>
+    </footer>
+</body>
+</html>

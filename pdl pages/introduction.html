@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lily DeHaven">
+    <link rel="icon" href="../assets/logo.jpg">
+    <title>Introduction</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <style>
+        main{
+            display: flex;
+            margin: 3em 2em;
+        }
+        .info-left{
+            width: 30%;
+            border-right: 2px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+        #contents{
+            text-align: right;
+            margin-bottom: 2em;
+            background-color: blue;
+            color: white;
+            padding: 2em;
+            height: 60px;
+            width: 90%;
+        }
+        #contents ul{
+            display: flex;
+            justify-content: right;
+            text-align: center;
+        }
+        #contents ul li{
+            list-style-type: none;
+            width: auto;
+            margin: auto 1em;
+        }
+        #contents ul li:hover{
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        #contents ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        #pages div{
+            margin: 0 1em;
+        }
+        #examples h4{
+            margin-bottom: 1em;
+            padding: 5px;
+        }
+        #examples pre{
+            border: 3px solid var(--brown);
+            margin: 2em;
+            padding: 2em;
+        }
+
+        @media (max-width: 900px){
+            .info-left{
+                margin: 2em;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 600px){
+            main{
+                display: block;
+            }
+            main div:nth-child(even){
+                width: 100%;
+            }
+        }
+    </style>
+    <header>
+        <img src="../assets/logo.jpg" alt="a swirly triangle">
+        <h1>Caine, Farber & Gordon, Inc.</h1>
+        <h2>PDL/81</h2>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../pdl.html" class="active">PDL/81</a>
+        <a href="../compilers.html">Compilers</a>
+    </nav>
+    <main>
+        <div class="info-left">
+            <h2>Information About PDL/81</h2>
+            <ul>
+                <li><a href="../pdl.html">PDL/81 Home Page</a></li>
+                <li><a href="description.html">Description of PDL/81</a></li>
+                <li><a href="platforms.html">Platforms</a></li>
+                <li><a href="attributes.html">PDL/81 Attributes</a></li>
+                <li><a href="introduction.html">An Introduction to PDL/81</a></li>
+                <li><a href="patches.html">Patches you may download</a></li>
+                <li><a href="documentation.html">PDL/81 Documemtation</a> - the eight primary PDL/81 manuals in Adobe PDF format</li>
+                <li><a href="patches.html#2000">Information on PDL/81 and the Year 2000 Problem</a></li>
+                <li><a href="https://www.cfg.com/pdl81/docs/pdl74_manual.pdf" target="_blank">Manual for the original PDL Processor, PDL/74</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="pages">
+                <div>
+                    <img src="../assets/pdl1a.jpg" alt="dark blue background with white pdl81 text">
+                    <h1>Introduction to PDL/81</h1>
+                </div>
+                <div id="contents">
+                    <ul>
+                        <li onclick="story()">The Story So Far</li>
+                        <li onclick="users()">Some PDL Users</li>
+                        <li onclick="summarizing()">Summarizing the Benefits</li>
+                        <li onclick="principles()">The Principles Behind PDL</li>
+                        <li onclick="language()">The PDL Language</li>
+                        <li onclick="sixth()">The PDL/81 Processor</li>
+                        <li onclick="capabilities()">The Full Capabilities of PDL/81</li>
+                    </ul>
+                </div>
+                <div>
+                    <div id="storyDiv">
+                        <h2>The Story So Far</h2>
+                        <p>
+                            The computer industry has never been noted for its tentative approach to new product development. New ideas, hailed 
+                            at one moment as technological breakthroughs, seem to become obsolete even as they're removed from their cartons.
+                        </p>
+                        <p>
+                            In contrast PDL is an idea from the 1970's which today, more than twenty years later, remains the de facto standard 
+                            for procedure-intensive software design. Other tools have come and gone, leaving PDL more popular and more widely used 
+                            than ever throughout the world.
+                        </p>
+                        <p>
+                            The ideas behind PDL were formulated by <a href="../index.html">Caine, Farber & Gordon, Inc.</a> (CFG) 
+                            in 1973. They were presented at the National Computing Conference in 1975 where CFG first made 
+                            public the significant productivity gains achieved.
+                        </p>
+                        <p>
+                            From this beginning, PDL has been adopted world-wide. It is used across a broad spectrum of applications 
+                            for projects of all sizes. In almost every case, it was chosen on the strength of the most genuine 
+                            advertising of all: word-of-mouth.
+                        </p>
+                        <p>
+                            Today, the original PDL/74 has been superseded by PDL/81 which offers considerable power and 
+                            flexibility. Yet the ideas behind PDL, and the original language, itself, have not changed at all.
+                        </p>
+                    </div>
+                    <div id="usersDiv">
+                        <h2>Representative PDL/81 Users</h2>
+                        <p>There are thousands of PDL installations world-wide. Users include:</p>
+                        <table width="100%">
+                            <tbody><tr><td>AEG Telefunken</td><td>Florida Power &amp; Light Co.</td><td>NASA
+                            </td></tr><tr>
+                            <td>AT&amp;T Bell Laboratories</td><td>Ford Aerospace Corp.</td><td>Northrop Corp.
+                            </td></tr><tr>
+                            <td>Aerospatiale</td><td>GTE Corp.</td><td>NV Philips
+                            </td></tr><tr>
+                            <td>Agusta Aviation</td><td>General Dynamics Corp.</td><td>Raytheon Co.
+                            </td></tr><tr>
+                            <td>Boeing Company</td><td>General Electric Co.</td><td>Rockwell International Corp.
+                            </td></tr><tr>
+                            <td>British Aerospace</td><td>General Motors Corp.</td><td>Siemens
+                            </td></tr><tr>
+                            <td>British Telecom</td><td>Grumman Corp.</td><td>Smiths Industries
+                            </td></tr><tr>
+                            <td>Chevron Oil Co.</td><td>HRB Systems, Inc.</td><td>TRW, Corp.
+                            </td></tr><tr>
+                            <td>Citicorp</td><td>Harris Corp.</td><td>Tektronix, Inc.
+                            </td></tr><tr>
+                            <td>Computer Sciences Corp.</td><td>Honeywell Corp.</td><td>Texas Instruments, Inc.
+                            </td></tr><tr>
+                            <td>Contel Federal Systems</td><td>Hughes Aircraft Co.</td><td>U.S. Air Force
+                            </td></tr><tr>
+                            <td>Control Data Corp.</td><td>IBM Corp.</td><td>U.S. Army
+                            </td></tr><tr>
+                            <td>Delco Electronics</td><td>ITT Corp.</td><td>U.S. Env. Prot. Agency
+                            </td></tr><tr>
+                            <td>E-Systems, Inc.</td><td>Intel Corp.</td><td>U.S. Geological Survey
+                            </td></tr><tr>
+                            <td>Eastman Kodak Co.</td><td>Jet Propulsion Laboratory</td><td>U.S. Navy
+                            </td></tr><tr>
+                            <td>Emerson Electric Co.</td><td>Leeds &amp; Northrup Co.</td><td>United Technologies Corp.
+                            </td></tr><tr>
+                            <td>Federal Aviation Admin.</td><td>Litton Industries, Inc.</td><td>Western Digital Corp.
+                            </td></tr><tr>
+                            <td>Federal Reserve Bank NY</td><td>Lockheed Corp.</td><td>Westinghouse Electric Corp.
+                            </td></tr><tr>
+                            <td>Flight Systems, Inc.</td><td>Martin Marietta Corp</td><td>Xerox Corp.
+                            </td></tr></tbody>
+                        </table>
+                    </div>
+                    <div id="summarizingDiv">
+                        <h2>Summarizing the Benefits</h2>
+                        <p>
+                            One way of illustrating the benefits of PDL is to consider the comments of users. They give a 
+                            variety of benefits as being the most important — reflecting the many ways in which PDL can be 
+                            used and the variety of methodologies it complements. The six benefits mentioned most frequently 
+                            are listed below. All lead to the goal of greater productivity.
+                        </p>
+                        <h3>Less Risk</h3>
+                        <p>The management risk in software development is substantially reduced since designs can be tested against requirements at an early stage.</p>
+                        <h3>Reliabilty</h3>
+                        <p>Programs are better organized and more reliable since they start with a complete, thoroughly considered design.</p>
+                        <h3>Visibility</h3>
+                        <p>Software visibility is higher so estimates of progress can be more accurately obtained.</p>
+                        <h3>Communication</h3>
+                        <p>Misunderstandings are avoided since everyone involved in a project uses a common, unambiguous medium for communication. This has proven especially so on projects involving multiple contractors and on multinational projects.</p>
+                        <h3>Documentation</h3>
+                        <p>Documentation in the form of PDL/81 Design Documents is available on-line before coding starts.</p>
+                        <h3>Flexibility</h3>
+                        <p>Multiple designs can be economically produced and compared in cases where the requirements are not given in full or where it is necessary to maximize the capabilities of a system within a given budget.</p>
+                    </div>
+                    <div id="principlesDiv">
+                        <h2>PDL/81 Principles</h2>
+                        <p>The development of PDL was guided by three principles. Today these are widely accepted as standard practice in developing reliable and efficient software.</p>
+                        <h3>Design first, code second</h3>
+                        <p>
+                            The design process is the creative, and most crucial part of the software developer's role.
+                        </p>
+                        <p>
+                            It is a three-stage process. First, you must understand and absorb the problem the software needs to 
+                            address. Second, create the ideas which solve the problem. Third, refine them until you can be highly 
+                            confident that you have a complete solution.
+                        </p>
+                        <p>
+                            Along the way, however, the design ideas need to be expressed and documented. In this, the designer 
+                            faces similar problems to those of a foreign language translator, needing to make sure the quality of 
+                            the original design idea is not lost when expressed in a new language.
+                        </p>
+                        <p>
+                            A language is needed in which design ideas can be expressed easily but with complete accuracy. And, 
+                            it needs to be just as suited to early design sketches as to finished, complex designs.
+                        </p>
+                        <p>
+                            If a programming language is used, there is an immediate handicap because its specifics — only needed 
+                            when communicating with a machine — quickly overshadow the design ideas. The result is an ill-conceived 
+                            program which, at best, solves only part of the original problem.
+                        </p>
+                        <p>
+                            PDL avoids this predicament by using a design language, not a programming language. It recognizes 
+                            that designing is a creative process, while coding is a more mechanical one, and draws a clear 
+                            distinction between the two.
+                        </p>
+                        <p>
+                            Using PDL, a complete, considered, and printed design is produced before any code is written.
+                        </p>
+                        <h3>Write in a form your customer can read</h3>
+                        <p>
+                            Software design exists to solve customers' problems.
+                        </p>
+                        <p>
+                            Since these problems are often particular to each customer, it follows that they are the best judges of whether a design will actually work. But they can only do so it is is written in a form they can understand.
+                        </p>
+                        <p>
+                            This cuts both ways. If the customer can read the design, the designer's grasp of the problem can be easily assessed, as can the accuracy of the specification of the problem.
+                        </p>
+                        <p>
+                            This is why a design written in PDL is presented in a form that is clear and uncomplicated. Even people with no programming experience can understand it. Customers are able, and encouraged, to iron-out problems and make improvements at a stage when it is still economical to do so.
+                        </p>
+                        <p>
+                            A customer isn't necessarily the party paying the bill. It could be the manager who set the task, or even the software developer with a personal design goal to be achieved. In the broadest sense a customer can be anyone who knows the problem and has an interest in seeing it solved.
+                        </p>
+                        <p>
+                            PDL lets anyone read a design. The more people who read it, the more likely it is to fully satisfy all their needs.
+                        </p>
+                        <h3>Words speak louder than pictures</h3>
+                        <p>
+                            Up to a point, diagrams can play a useful role in software development. At the higher level of the process, their many shapes and forms can communicate the fundamentals of a design and the broad relationships between the various parts.
+                        </p>
+                        <p>
+                            As the volume of detail increases, however, the usefulness of diagrams becomes questionable. They become hard to read, unwieldy to handle and expensive to maintain. They also have the dangerous tendency to highlight all that is good and present in the design, while actually obscuring what's wrong or missing.
+                        </p>
+                        <p>
+                            The answer lies in the most basic, and yet most expansive, information carrier we know: plain English. Our experience and understanding of English is far greater than that of diagrams.
+                        </p>
+                        <p>
+                            With PDL, the designer has two powerful tools: the richness and familiarity of English, and the structure and precision found in a programming language. The result is unambiguous English — and total comprehension all around.
+                        </p>
+                    </div>
+                    <div id="languageDiv">
+                        <h2>The PDL Language</h2>
+                        <p>In this section we examine:</p>
+                        <ul>
+                            <li><a href="#keywords">PDL Keywords</a></li>
+                            <li><a href="#segments">Flow Segments</a></li>
+                            <li><a href="#writing">Writing PDL</a></li>
+                            <li><a href="#examples">Some Examples</a></li>
+                        </ul>
+                        <p>
+                            The PDL language is a combination of English and PDL Keywords. English provides the richness and 
+                            the variety the designer is used to using; the keywords add the means to specify structure and avoid 
+                            ambiguity.
+                        </p>
+                        <div id="keywords">
+                            <h3>Keywords</h3>
+                            <p>The primary PDL keywords, grouped as commonly used, are:</p>
+                            <table style="margin-left: 2em;" width="75%">
+                                <tr>
+                                    <td width="33.33%">if</td>
+                                    <td width="33.33%">do</td>
+                                    <td width="33.33%">return</td>
+                                </tr>
+                                <tr>
+                                    <td width="33.33%">elseif</td>
+                                    <td width="33.33%">undo</td>
+                                </tr>
+                                <tr>
+                                    <td width="33.33%">else</td>
+                                    <td width="33.33%">cycle</td>
+                                </tr>
+                                <tr>
+                                    <td width="33.33%">endif</td>
+                                    <td width="33.33%">enddo</td>
+                                </tr>
+                            </table>
+                            <p>The secondary keywords are:</p>
+                            <table style="margin-left: 2em;" width="75%">
+                                <tr>
+                                    <td width="25%">if</td>
+                                    <td width="25%">while</td>
+                                    <td width="25%">forever</td>
+                                    <td width="25%">case</td>
+                                </tr>
+                                <tr>
+                                    <td width="25%">until</td>
+                                    <td width="25%">for</td>
+                                    <td width="25%">not</td>
+                                </tr>
+                            </table>
+                            <p>The set of keywords can be easily modified by the designer. In addition, there is a set of keywords specific to the Ada language.</p>
+                            <p>In Example 1, notice how easily a PDL design of a simple bubble sort can be understood from just a quick reading.</p>
+                        </div>
+                        <div id="segments">
+                            <h3>Flow Segments</h3>
+                            <p>
+                                The overall structure of a PDL design is formed by dividing it into Flow Segments. A Flow Segment 
+                                corresponds roughly to a procedure in the final implementation. A typical design comprises a 
+                                hierarchy of Flow Segments in which a main segment references others, which in turn reference others.
+                            </p>
+                        </div>
+                        <div id="writing">
+                            <h3>Writing PDLd</h3>
+                            <p>
+                                The mechanics of writing in PDL are simple. A design is written to a source file using any 
+                                text editor. Having entered the the name of a Flow segment, the PDL statements that compose 
+                                it are entered in free form. Then the problem of presenting the design in a high-standard, 
+                                cross-referenced Design Document is left entirely to the PDL/81 Processor.
+                            </p>
+                            <p>
+                                Example 2 is a generated flow segment taken from a typical PDL/81 design document. 
+                                Example 3 is an extract from the source file showing exactly what was written by the designer.
+                            </p>
+                        </div>
+                        <div id="examples">
+                            <h3>Examples</h3>
+                            <h4><u>Example 1.</u> PDL/81 Design of a Bubble Sort</h4>
+                            <pre>
+                                <strong>sort(table, number of items)</strong>
+
+                                IF there are any items
+                                    DO UNTIL no items are interchanged
+                                        DO FOR each pair of items in the table (1-2, 2-3,
+                                                3-4, etc.)
+                                            IF first item of pair is greater than second item of pair
+                                                interchange the two items
+                                            ENDIF
+                                        ENDDO
+                                    ENDDO
+                                ENDIF
+                            </pre>
+                            <h4><u>Example 2.</u> A Page From a PDL/81 Design Document</h4>
+                            <pre>
+                                CFG, INC.    PHASE 50: CROSS-REFERENCE (42.90)                   PAGE 11
+                                28 Sep 91    Cross-Reference Phase
+                                
+                                   Move Names Out of Symbol Entries
+                                
+                                REF   (CX=2)
+                                PAGE **********************************************************************
+                                     *                                                                    *
+                                     *  1  DO FOR each symbol entry ..all hang in sorted order from first *
+                                     *         hash entry                                                 *
+                                  14 *  2    allocate a block () returns (address)                        *
+                                     *  3    IF free_space_overrun                                        *
+                                     *  4      reset print flag                                           *
+                                  20 *  5      print line (symbol names overran free space; no cross-     *
+                                     *             reference displayed)                                   *
+                                     *  6      UNDO                                                       *
+                                     *  7    ELSE                                                         *
+                                     *  8      move dictionary_name from symbol entry to address          *
+                                     *  9      replace first word of name in symbol entry with address    *
+                                     *             ..xref_name pointer                                    *
+                                     * 10      replace second word of name in symbol entry with zero      *
+                                     *             ..xref_block_pointer                                   *
+                                     * 11      replace third word of name in symbol entry with zero       *
+                                     *             ..xref_count                                           *
+                                     * 12    ENDIF                                                        *
+                                     * 13  ENDDO FOR                                                       *
+                                     *                                                                    *
+                                     **********************************************************************
+                                
+                                     Requirements 3.4.1.2, 3.4.6
+                            </pre>
+                            <h4><u>Example 3.</u> The Corresponding Extract From the Source File</h4>
+                            <pre>
+                                %s Move Names Out of Symbol Entries
+                                %r 3.4.1.2;3.4.6
+                                do for each symbol entry ..all hang in sorted order from the first \
+                                      hash table entry
+                                  allocate a block () returns (address)
+                                  if free_space_overrun
+                                    reset print flag
+                                      print line (symbol names overran free space; no cross-reference \
+                                          displayed)
+                                      undo
+                                  else
+                                    move dictionary_name from symbol entry to address
+                                    replace first word of name in symbol entry with address ..xref_name pointer
+                                    replace second word of name in symbol entry with zero ..xref_block_pointer
+                                    replace third word of name in symbol entry with zero ..xref_count
+                                  endif
+                                endo for
+                            </pre>
+                        </div>
+                    </div>
+                    <div id="processorDiv">
+                        <h2>The PDL/81 Processor</h2>
+                        <p>The <em>PDL/81</em> processor completely removes the burden of presenting <em>PDL</em> designs in documents which have a consistent form and high standard.</p>
+                        <p>
+                            <em>PDL/81</em> can be used at any time during a project to print a
+                            fully-legible, cross-referenced design document.
+                            The layout encourages fast understanding by the reader, while the
+                            deliberately economical use of visual enhancements prevents the impact
+                            of a page detracting from its content.  
+                        </p>
+                        <p>
+                            It doesn't matter if a design is incomplete: <em>PDL/81</em> will always
+                            produce a complete design document in which the unfinished parts will
+                            be obvious.
+                            Even an early design sketch can be documented with <em>PDL/81</em>.
+                        </p>
+                        <p>
+                            At its simplest level, <em>PDL/81</em> automatically does such things as:
+                        </p>
+                        <ul>
+                            <li>printing each flow segment on a separate page;</li>
+                            <li>highlighting keywords;</li>
+                            <li>indenting statements to correspond to nesting levels;</li>
+                            <li>detecting and cross-referencing calls from one flow segment to another; and</li>
+                            <li>detecting and cross-referencing the use of data items.</li>
+                        </ul>
+                        <p>Each of these functions is illustrated in Example 2.</p>
+                        <p>
+                            Beyond these functions, the power and flexibility of <em>PDL/81</em> is
+                            considerable — virtually every aspect of the design document
+                            can be changed.
+                            For example:
+                        </p>
+                        <ul>
+                            <li>keywords can be added, perhaps to match the implementation language;</li>
+                            <li>visual enhancements can be changed;</li>
+                            <li>specialized indexes can be created;</li>
+                            <li>
+                                a great deal of useful information about a design can be accumulated
+                                and reported by <em>PDL/81</em> by using facilities such as
+                                <em>Complexity Analysis</em>, <em>Consistency Checking</em>, and
+                                <em>Automatic Requirements Tracking</em>.
+                            </li>
+                        </ul>
+                        <p>
+                            In practice, it is common for a design team to create its own
+                            house-style for design documents  by using the
+                            <em>Format Design Language</em> component of <em>PDL/81</em>.
+                        </p>
+                        <h2>Conventional Documents</h2>
+                        <p>
+                            In addition to software designs, <em>PDL/81</em> is a complete text
+                            processor for conventional documents such as manuals, reports,
+                            letters, and memos.
+                            In fact, all the documents associated with software development can be
+                            produced using the same tool.
+                        </p>
+                    </div>
+                    <div id="capabilitiesDiv">
+                        <h2>PDL/81 Capabilities</h2>
+                        <p>All the capabilities of PDL/81, both for software designs and for conventional documents, are listed here.</p>
+                        <h3>For Software Design Documents</h3>
+                        <ul>
+                            <li>
+                                <em>PDL/81</em> automatically generates design documents with the following components:
+                                <ul>
+                                    <li>Cover Page</li>
+                                    <li>Table of Contents</li>
+                                    <li>Flow Segments</li>
+                                    <li>Data Segments</li>
+                                    <li>Text Segments</li>
+                                    <li>External Segments</li>
+                                    <li>Segment Reference Trees</li>
+                                    <li>Data Index</li>
+                                    <li>Flow Segment Index</li>                                
+                                </ul>
+                            </li>
+                            <li>
+                                Flow segments are automatically formatted based on the use of <em>PDL</em>
+                                keywords, helping to show the flow of the design clearly.
+                            </li>
+                            <li>
+                                All references (or <em>calls</em>) within a flow segment to other flow
+                                segments are detected and indicated.
+                            </li>
+                            <li>
+                                Segment reference trees illustrate, by using indented tables, the
+                                relationships between all the flow segments of a design.
+                            </li>
+                            <li>
+                                A data item index lists the data items used in the design and shows
+                                where each is used.
+                            </li>
+                            <li>
+                                a flow segment index lists the flow segments of the design and shows
+                                where each is used.
+                            </li>
+                            <li>
+                                Additional keywords can be added easily, and the user has complete
+                                control over the type of highlight (if any) used for the keywords.
+                            </li>
+                            <li>
+                                The <em>cyclomatic complexity</em> of each segment may be measured and
+                                reported.
+                                The complexity is printed on each flow segment page and in the flow
+                                segment index.
+                                If a segment's complexity exceeds some specified value, a warning
+                                will be printed, and all such segments will be listed in an
+                                <em>index of overly complex segments</em>.
+                            </li>
+                            <li>
+                                Automatic requirements tracking may be used to indicate which flow
+                                segments address (or are associated with) which paragraphs of the
+                                controlling requirements specification.
+                                When used with DOD-STD 2167A, this might be the
+                                <em>Software Requirements Specification, DI-MCR-80025</em>.
+                                References are displayed with each flow segment and summarized in an
+                                optional requirements index.
+                            </li>
+                            <li>
+                                Consistency checking is provided in the form of an optional
+                                <em>calls-in-context</em> report.
+                                This groups together all the calls to a particular flow segment and
+                                flag those which appear to be inconsistent.
+                            </li>
+                            <li>
+                                Syntax checking of the use of keywords may be performed and errors
+                                reported.
+                            </li>
+                            <li>
+                                Both a <em>PDL</em> design and the resulting code may be maintained in the
+                                source file.
+                                Code is held in <em>code segments</em> which can be printed in the design
+                                document interleaved with the corresponding flow segments.
+                            </li>
+                            <li>An <em>Ada Design Style</em> is provided for designs that need to b
+                                implemented in the Ada programming language.
+                            </li>
+                        </ul>
+                        <h3>For Conventional Documents</h3>
+                        <ul>
+                            <li>
+                                In addition to software design documents, other document styler are
+                                distributed with <em>PDL/81</em> for producing conventional documents.
+                                These are <em>manual</em>, a style for formatting manuals and reports;
+                                <em>text</em>, a style for formatting general text; <em>letter</em>; and
+                                <em>memo</em>.
+                            </li>
+                            <li>These styles provide features including:
+                                <ul>
+                                    <li>
+                                        Automatically filled and justified text.
+                                    </li>
+                                    <li>
+                                        Multi-level major and minor headings with automatically generated
+                                        numbers.
+                                    </li>
+                                    <li>
+                                        Automatically formatted lists of various kinds including both
+                                        enumerated and itemized lists.
+                                    </li>
+                                    <li>
+                                        Automatically generated table of contents with control over the level
+                                        of detail displayed.
+                                    </li>
+                                    <li>
+                                        Automatically generated document index.
+                                    </li>
+                                    <li>
+                                        Formatting of figures and tables with automatically assigned numbers
+                                        and generations of a list of tables and a list of figures.
+                                    </li>
+                                    <li>
+                                        Cross-referencing between parts of a document with references
+                                        automatically updated as the document changes.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Document styles are governed by <em>style files</em>, one of which is
+                                selected when <em>PDL/81</em> is invoked.
+                                Style files can be modified, and entirely new styles created.
+                                Simple modifications are accomplished by editing the distributed style
+                                files.
+                                For extensive modifications and creating new styles, the Format Design
+                                Language is available.
+                            </li>
+                            <li>
+                                For classified documents, <em>Automatic Portion Marking</em> is provided
+                                in accordance with the <em>Industrial Security Manual</em>.
+                            </li>
+                            <li>
+                                A special <em>man2167</em> style is provided for formatting documents
+                                which abide by the guidelines of DOD-STD-2167A,
+                                <em>Defense System Software Development</em>, and MIL-STD-490A,
+                                <em>Specification Practices</em>.
+                                This is particularly useful for producing documents specified in Data
+                                Item Descriptions DI-MCCR-8009 through DI-MCCR-8032.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../contact.html">Contact Us</a>
+            <a href="../pdl.html">PDL/81</a>
+            <a href="../compilers.html">Compilers</a>
+        </div>
+        <p>DISCLAIMER: All words and text belong to Caine, Farber & Gordon, Inc. This website is simply a redesign and is based off of <a href="https://www.cfg.com/" target="_blank">cfg.com</a>.</p>
+        <p><small>All designs are original work of Lily DeHaven &copy; 2023</small></p>
+    </footer>
+    <script>
+        var storyDiv = document.getElementById('storyDiv');
+        var usersDiv = document.getElementById('usersDiv');
+        var summarizingDiv = document.getElementById('summarizingDiv');
+        var principlesDiv = document.getElementById('principlesDiv');
+        var languageDiv = document.getElementById('languageDiv');
+        var processorDiv = document.getElementById('processorDiv');
+        var capabilitiesDiv = document.getElementById('capabilitiesDiv');
+        window.onload = function(){
+            story()
+        }
+        function story(){
+            storyDiv.style.display = 'block';
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function users(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'block'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function summarizing(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'block'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function principles(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'block'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function language(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'block'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function sixth(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'block'
+            capabilitiesDiv.style.display = 'none'
+        }
+        function capabilities(){
+            storyDiv.style.display = 'none'
+            usersDiv.style.display = 'none'
+            summarizingDiv.style.display = 'none'
+            principlesDiv.style.display = 'none'
+            languageDiv.style.display = 'none'
+            processorDiv.style.display = 'none'
+            capabilitiesDiv.style.display = 'block'
+        }
+    </script>
+</body>
+</html>
